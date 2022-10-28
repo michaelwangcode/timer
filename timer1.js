@@ -5,10 +5,10 @@ let commandLine = process.argv.slice(2);
 let beepTimes = {};
 
 // Iterate through the command line
-for (string of commandLine) {
+for (let string of commandLine) {
 
   // Convert the arguments from string to number
-  if (parseInt(string) !== NaN && parseInt(string) > 0) {
+  if (!isNaN(parseInt(string)) && parseInt(string) > 0) {
 
     // Store the number and multiply it by 1000
     beepTimes[(parseInt(string) * 1000)] = true;
@@ -29,5 +29,5 @@ for (const beepTime in beepTimes) {
   setTimeout(() => {
     process.stdout.write('\x07');
     console.log(beepTime);
-  }, time)
+  }, time);
 }
